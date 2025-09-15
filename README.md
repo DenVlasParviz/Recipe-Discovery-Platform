@@ -65,7 +65,7 @@ erDiagram
         string name
         datetime createdAt
     }
----
+
 ```
 ## Video Example
 https://youtu.be/cFSn1JrUDOY
