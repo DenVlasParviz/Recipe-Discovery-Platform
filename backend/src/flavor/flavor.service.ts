@@ -80,9 +80,15 @@ export class FlavorService {
     }
     async remove(userId: number, recipeId: number) {
         const recipe = await this.prisma.recipe.findUnique({ where: { id: recipeId } });
+
         if (!recipe || recipe.authorId !== userId) {
             throw new BadRequestException('Recipe not found or access denied');
         }
+
+        // Сначала удаляем все рейтинги, связанные с этим рецептом
+        await this.prisma.rating.deleteMany({ where: { recipeId } });
+
+        // Теперь можно удалить сам рецепт
         return this.prisma.recipe.delete({ where: { id: recipeId } });
     }
     async getUserRecipes(userId:number){
