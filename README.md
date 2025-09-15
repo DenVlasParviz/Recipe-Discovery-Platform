@@ -4,7 +4,7 @@
 - [Environment Variables (.env)](#environment-variables-env)
 - [Local Installation and Running](#local-installation-and-running)
 - [Database Schema](#database-schema)
-
+- [Video Example](#video-example)
 
 ## Environment Variables (.env)
 
@@ -65,9 +65,10 @@ erDiagram
         string name
         datetime createdAt
     }
-
-
-   ```
+---
+```
+## Video Example
+https://youtu.be/cFSn1JrUDOY
 
 
 
